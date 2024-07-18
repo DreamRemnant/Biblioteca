@@ -10,10 +10,10 @@ namespace Biblioteca
     {
         public string Titulo { get; set; }
         public string Autor { get; set; }
-        public int ISBN { get; set; }
+        public long ISBN { get; set; }
         public bool Estado { get; set; }
 
-        public Libro(string Titulo, string Autor, int ISBN)
+        public Libro(string Titulo, string Autor, long ISBN)
         {
             this.Titulo = Titulo;
             this.Autor = Autor;
