@@ -23,7 +23,7 @@ namespace Biblioteca
             return;
         }
 
-        protected abstract void Menu();
+        public abstract void Menu();
         private  void RegistrarUsuario()
         {
             
