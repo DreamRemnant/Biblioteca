@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace Biblioteca
 {
     internal class Usuarios
     {
-        static List<Persona> Personas = new List<Persona>();
+        private static List<Persona> Personas = new List<Persona>();
 
         public Persona ObtenerPorUsername (string username)
         {
@@ -25,7 +26,7 @@ namespace Biblioteca
 
         public Persona ObtenerPorNombre(string nombre)
         {
-            foreach (Persona usuario in Usuarios)
+            foreach (Persona usuario in Personas)
             {
                 if (usuario.Nombre == nombre)
                 {
@@ -35,5 +36,33 @@ namespace Biblioteca
 
             throw new Exception("No se encontró un usuario con ese Username.");
         }
+
+        public List<Persona> ObtenerLectores()
+        {
+            List<Persona> lectores = new List<Persona>();
+            foreach(Persona usuario in Personas)
+            {
+                if (usuario is Lector)
+                {
+                    lectores.Add(usuario);
+                }
+            }
+
+            return lectores;
+        }
+        public List<Persona> ObtenerBibliotecarios()
+        {
+            List<Persona> lectores = new List<Persona>();
+            foreach(Persona usuario in Personas)
+            {
+                if (usuario is Bibliotecario)
+                {
+                    lectores.Add(usuario);
+                }
+            }
+
+            return lectores;
+        }
+
     }
 }
