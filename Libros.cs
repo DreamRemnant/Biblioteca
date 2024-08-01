@@ -8,7 +8,7 @@ namespace Biblioteca
 {
     internal static class Libros
     {
-        static List<Libro> librosRegistrados = new List<Libro>();
+        private static List<Libro> librosRegistrados = new List<Libro>();
 
         public static void AgregarLibro(Libro libro)
         {
