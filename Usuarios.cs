@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    internal class Usuarios
+    internal static class Usuarios
     {
         static List<Persona> Personas = new List<Persona>();
 
-        public Persona ObtenerPorUsername (string username)
+        public static Persona ObtenerPorUsername (string username)
         {
             foreach (Persona usuario in Personas)
             {
@@ -23,9 +23,9 @@ namespace Biblioteca
             throw new Exception("No se encontró un usuario con ese Username.");
         }
 
-        public Persona ObtenerPorNombre(string nombre)
+        public static Persona ObtenerPorNombre(string nombre)
         {
-            foreach (Persona usuario in Usuarios)
+            foreach (Persona usuario in Personas)
             {
                 if (usuario.Nombre == nombre)
                 {
@@ -34,6 +34,17 @@ namespace Biblioteca
             }
 
             throw new Exception("No se encontró un usuario con ese Username.");
+        }
+
+        public static void RegistrarUsuario(Persona persona)
+        {
+            Personas.Add(persona);
+            Console.WriteLine("¡Usuario registrado correctamente!");
+        }
+
+        public static void EliminarUsuario(String username)
+        {
+            Personas.Remove(ObtenerPorUsername(username));
         }
     }
 }
