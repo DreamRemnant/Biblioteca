@@ -13,6 +13,16 @@ namespace Biblioteca
         static void Main(string[] args)
         {
             defaultData();
+
+            Console.WriteLine("" +
+                "=============== BIBLIOTECA ==============="
+                "Bienvenido al sistema de bibilioteca." +
+                "Eliga una opción del menú:\n" +
+                "1. Iniciar sesión.\n" +
+                "2. Registrarse\n" +
+                "3. Salir");
+            //TODO Avanzar desde aquí
+
             Console.ReadKey();
         }
 
